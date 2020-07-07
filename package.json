@@ -1,0 +1,22 @@
+{
+  "name": "api_nodejs",
+  "version": "1.0.0",
+  "description": "API básica em Node, Express e Mongodb",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Caiostig/api_node.git"
+  },
+  "author": "Caio Stigliani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Caiostig/api_node/issues"
+  },
+  "homepage": "https://github.com/Caiostig/api_node#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
