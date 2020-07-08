@@ -1,14 +1,12 @@
 const express = require('express');
 const app = express();
 
-app.get('/', (req, res) => {
-    let obj = req.query;
-    return res.send({message: `Método GET respondendo, enviando nome ${obj.nome} e idade ${obj.idade}`});
-});
+const indexRoute = require('./Routes/index')
+const usersRoute = require('./Routes/users')
 
-app.post('/', (req, res) => {
-    return res.send({message: 'Método POST respondendo'})
-});
+app.use('/', indexRoute);
+app.use('/users', usersRoute);
+
 
 app.listen(3000);
 
