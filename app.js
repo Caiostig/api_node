@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 
-const url = 'mongodb+srv://admin:${process.env.DB_PASS}@clusterapi.q1dp5.mongodb.net/<dbname>?retryWrites=true&w=majority';
+const url = 'mongodb+srv://admin:admin2020@clusterapi.q1dp5.mongodb.net/<dbname>?retryWrites=true&w=majority';
 const options = { reconnectTries: Number.MAX_VALUE, reconnectInterval: 500, poolSize: 5, useNewUrlParser: true };
 
 mongoose.connect(url, options);
