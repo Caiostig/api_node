@@ -1,0 +1,13 @@
+#Shared between .npmignore and .gitignore
+
+.idea/
+.vscode/
+*.DS_Store
+*.swp
+*.env
+
+
+#Build artifacts
+
+node_modules/
+package-lock.json
