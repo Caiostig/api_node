@@ -4,15 +4,13 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 require('dotenv').config()
 
-const url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@clusterapi.q1dp5.mongodb.net/<dbname>?retryWrites=true&w=majority`;
+const url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}${process.env.DB_HOST}`;
 const options = { reconnectTries: Number.MAX_VALUE, reconnectInterval: 500, poolSize: 5, useNewUrlParser: true };
 
 mongoose.connect(url, options);
 mongoose.set('useCreateIndex', true);
 
-
 //Alguns eventos que ficam ouvindo o Banco, e nos avisando sobre algum ocorrido
-
 mongoose.connection.on('error', (err) => {
     console.log('Erro na conexão com o banco de dados: ' + err);
 })
