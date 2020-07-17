@@ -1,12 +1,14 @@
-# Criação de uma API básica em Node 
-
-* A intenção é criar uma API básica em Node, que utiliza Express e Mongodb.
+# Criação de uma API básica CRUD em Node, que utiliza Express, Mongodb, e faça autenticação.
 
 
 ## Bibliotecas utilizadas
-* Framework para...: [Express](https://expressjs.com/pt-br/)
-* Lib para...: [body-parser](https://github.com/expressjs/body-parser)
-* Lib para ...: [mongoose](https://mongoosejs.com/)
+* [Express](https://expressjs.com/pt-br/)
+* [body-parser](https://github.com/expressjs/body-parser)
+* [mongoose](https://mongoosejs.com/)
+* [bcrypt](https://www.npmjs.com/package/bcrypt)
+* [dotenv](https://www.npmjs.com/package/dotenv)
+* [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
+* [nodemon](https://www.npmjs.com/package/nodemon)
 
 
 ## Banco de Dados como serviço
@@ -17,17 +19,50 @@
 ## Estrutura de organização do projeto
 
 * Estrutura de Pastas:
-    - `/app.js` contém ...
-    -  `/Routes` contém ...
+    - `/middlewares` contem um arquivo para autenticação de endpoint
+    - `/model` contém ...
+    - `/Routes` contém ...
+    - `/config` contém ...
+    
+
+## Setup
+
+* Instalar dependencias do projeto com o comando padrão npm
+
+```shell
+npm install
+```
 
 
 ## Rodar o projeto local
 
-Para dar um start no projeto, em `package.json`, tem o script:
+Para rodar o projeto, em `package.json`, rodar o script:
 
 * Ambiente localhost:3000 (padrão)
 
 ```shell
+npm run start
+```
+
+
+* Setar variável para ambiente de HOMOLOG
+
+```shell
+export NODE_ENV=hml
+npm run start
+```
+
+* Setar variável para ambiente de PROD
+
+```shell
+export NODE_ENV=prod
+npm run start
+```
+
+* Setar variável para ambiente de DEV - se não setar nada, configurei como padrão em DEV
+
+```shell
+export NODE_ENV=dev
 npm run start
 ```
 
@@ -41,10 +76,4 @@ npm run start
 * Instalar [NodeJS](http://nodejs.org/)
 
 
-## Setup
 
-* Instalar dependencias do projeto com o comando padrão npm
-
-```shell
-npm install
-```

@@ -8,15 +8,13 @@ const UserSchema = new Schema({
     created: { type: Date, default: Date.now }
 });
 
-//Ao criar usuário, vai passar por esse pré save, para criptografar a senha
-UserSchema.pre('save', function (next) {
+//Ao criar usuário, vai passar por esse pre-save, para criptografar a senha
+UserSchema.pre('save', async function (next) {
     let user = this;
-    if (!user.isModified('password')) return next(); //se o usuário não for modificado no campo password, vai para a próxima função
+    if (!user.isModified('password')) return next(); //se o usuário não for modificado no campo password, vai criptografar
 
-    bcrypt.hash(user.password, 10, (err, encrypted) => {
-        user.password = encrypted;
-        return next();
-    });
+    user.password = await bcrypt.hash(user.password, 10);
+    return next();
 });
 
 module.exports = mongoose.model('User', UserSchema);
