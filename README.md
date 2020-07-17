@@ -1,12 +1,14 @@
-# Criação de uma API básica em Node 
-
-* A intenção é criar uma API básica em Node, que utiliza Express e Mongodb.
+# Criação de uma API básica CRUD em Node, que utiliza Express, Mongodb, e faça autenticação.
 
 
 ## Bibliotecas utilizadas
-* Framework para...: [Express](https://expressjs.com/pt-br/)
-* Lib para...: [body-parser](https://github.com/expressjs/body-parser)
-* Lib para ...: [mongoose](https://mongoosejs.com/)
+* [Express](https://expressjs.com/pt-br/)
+* [body-parser](https://github.com/expressjs/body-parser)
+* [mongoose](https://mongoosejs.com/)
+* [bcrypt](https://www.npmjs.com/package/bcrypt)
+* [dotenv](https://www.npmjs.com/package/dotenv)
+* [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
+* [nodemon](https://www.npmjs.com/package/nodemon)
 
 
 ## Banco de Dados como serviço
@@ -17,13 +19,24 @@
 ## Estrutura de organização do projeto
 
 * Estrutura de Pastas:
-    - `/app.js` contém ...
-    -  `/Routes` contém ...
+    - `/middlewares` contem um arquivo para autenticação de endpoint
+    - `/model` contém ...
+    - `/Routes` contém ...
+    - `/config` contém ...
+    
+
+## Setup
+
+* Instalar dependencias do projeto com o comando padrão npm
+
+```shell
+npm install
+```
 
 
 ## Rodar o projeto local
 
-Para dar um start no projeto, em `package.json`, tem o script:
+Para rodar o projeto, em `package.json`, rodar o script:
 
 * Ambiente localhost:3000 (padrão)
 
@@ -41,10 +54,4 @@ npm run start
 * Instalar [NodeJS](http://nodejs.org/)
 
 
-## Setup
 
-* Instalar dependencias do projeto com o comando padrão npm
-
-```shell
-npm install
-```
