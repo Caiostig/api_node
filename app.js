@@ -3,8 +3,9 @@ const app = express();
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 require('dotenv').config()
+const config = require('./config/config')
 
-const url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}${process.env.DB_HOST}`;
+const url = config.bd_string;
 const options = { reconnectTries: Number.MAX_VALUE, reconnectInterval: 500, poolSize: 5, useNewUrlParser: true };
 
 mongoose.connect(url, options);

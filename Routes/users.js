@@ -3,14 +3,18 @@ const router = express.Router();
 const Users = require('../model/user');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const config = require('../config/config');
+const auth = require('../middlewares/auth');
 
 
 //Função auxiliar
 const createUserToken = (userId) => {
-    return jwt.sign({ id: userId }, `${process.env.TOKEN_PASSWORD}`, { expiresIn: '1d' });
+    return jwt.sign({ id: userId }, config.jwt_pass, { expiresIn: config.jwt_expires_in });
 }
 
-router.get('/', async (req, res) => {
+// /users está com autenticação, precisa logar e pegar o token
+// http://localhost:3000/users/auth com um email e login no body, me passa token para login
+router.get('/', auth, async (req, res) => {
     try {
         const users = await Users.find({});
         return res.send(users);
@@ -36,7 +40,8 @@ router.post('/create', async (req, res) => {
     }
 });
 
-    //endpoint de autenticação
+//endpoint de autenticação
+//endpoint para para login - http://localhost:3000/users/auth
 router.post('/auth', async (req, res) => {
     const { email, password } = req.body;
 

@@ -45,6 +45,28 @@ npm run start
 ```
 
 
+* Setar variável para ambiente de HOMOLOG
+
+```shell
+export NODE_ENV=hml
+npm run start
+```
+
+* Setar variável para ambiente de PROD
+
+```shell
+export NODE_ENV=prod
+npm run start
+```
+
+* Setar variável para ambiente de DEV - se não setar nada, configurei como padrão em DEV
+
+```shell
+export NODE_ENV=dev
+npm run start
+```
+
+
 ## Variáveis de ambiente
 
 * Se for necessário adicionar novas variáveis, lembre-se de mapeá-las no arquivo `/.env`
