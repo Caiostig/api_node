@@ -1,4 +1,4 @@
-# Criação de uma API básica em Node, com express e mongodb.
+# API básica em Node (CRUD), com express e Mongodb.
 
 
 ## Bibliotecas utilizadas
