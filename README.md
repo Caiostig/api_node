@@ -1,4 +1,4 @@
-# Criação de uma API básica CRUD em Node, que utiliza Express, Mongodb, e faça autenticação.
+# Criação de uma API básica em Node, com express e mongodb.
 
 
 ## Bibliotecas utilizadas
@@ -19,11 +19,11 @@
 ## Estrutura de organização do projeto
 
 * Estrutura de Pastas:
-    - `/middlewares` contem um arquivo para autenticação de endpoint
-    - `/model` contém ...
-    - `/Routes` contém ...
-    - `/config` contém ...
-    
+    - `/config`
+    - `/middlewares`
+    - `/model`
+    - `/Routes`
+
 
 ## Setup
 
@@ -59,7 +59,7 @@ export NODE_ENV=prod
 npm run start
 ```
 
-* Setar variável para ambiente de DEV - se não setar nada, configurei como padrão em DEV
+* Setar variável para ambiente de DEV - se não setar nada, está configurado o padrão como DEV
 
 ```shell
 export NODE_ENV=dev
@@ -74,6 +74,3 @@ npm run start
 
 ## Pre-requisitos para rodar o projeto
 * Instalar [NodeJS](http://nodejs.org/)
-
-
-
