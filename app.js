@@ -24,17 +24,15 @@ mongoose.connection.on('connected', () => {
     console.log('Aplicação conectada no Banco de Dados!');
 })
 
-//Body-Parser
-app.use(bodyParser.urlencoded({ extended: false}));
+//Body-Parser - fazer um parser da requisição para um JSON
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
 
 const indexRoute = require('./Routes/index')
 const usersRoute = require('./Routes/users')
 
 app.use('/', indexRoute);
 app.use('/users', usersRoute);
-
 
 app.listen(3000);
 
