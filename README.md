@@ -1,4 +1,4 @@
-# API básica em Node (CRUD), com express e Mongodb.
+# API básica em Node (CRUD), com express e Mongodb Atlas como serviço.
 
 
 ## Bibliotecas utilizadas
